@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Tanya ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #0f0f14, #1b1b28);
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .box {
+      width: 180px;
+      height: 180px;
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      cursor: pointer;
+      box-shadow: 0 20px 40px rgba(255, 77, 109, 0.5);
+      animation: pulse 1.8s infinite;
+    }
+
+    .hint {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .proposal {
+      display: none;
+      background: #161622;
+      padding: 36px;
+      border-radius: 20px;
+      max-width: 420px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .proposal img {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      color: #ff6b8a;
+      margin-bottom: 12px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.05rem;
+      color: #eaeaea;
+    }
+
+    .buttons {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      background: #ff6b8a;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Music -->
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container" id="start">
+    <div class="box" onclick="openBox()">🎁</div>
+    <div class="hint">Tanya, click the surprise 💖</div>
+  </div>
+
+  <div class="proposal" id="proposal">
+    <img src="photo.jpg" alt="Us together">
+
+    <h1>My Dearest Tanya ❤️</h1>
+
+    <p>
+      Every moment with you has made my life brighter, warmer, and more meaningful.
+      You are my best friend, my happiness, and my home.
+    </p>
+
+    <p>
+      I can’t imagine my future without you by my side.
+    </p>
+
+    <h2>Will you marry me? 💍</h2>
+
+    <div class="buttons">
+      <button class="yes" onclick="yes()">Yes 💖</button>
+      <button class="yes" onclick="yes()">Of course 🥹❤️</button>
+    </div>
+  </div>
+
+  <script>
+    function openBox() {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("proposal").style.display = "block";
+      document.getElementById("music").play();
+    }
+
+    function yes() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          flex-direction:column;
+          background:linear-gradient(135deg,#ff4d6d,#ff758f);
+          color:white;
+          font-family:Segoe UI,sans-serif;
+          text-align:center;
+        ">
+          <h1>She Said YES!!! 💍💖</h1>
+          <p style="font-size:1.3rem;">Forever starts now 🥹</p>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
